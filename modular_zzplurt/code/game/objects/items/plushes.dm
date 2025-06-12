@@ -79,6 +79,8 @@
 	name = "Artificer Kobold"
 	desc = "A lifesized recreation of a kobold from a popular tabletop roleplaying game, additional accessories such as hat and rifle not included. Wait, what do you mean you've seen it? It's brand new!"
 	icon = 'modular_zzplurt/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_lefthand.dmi'
+	righthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_right.dmi'
 	icon_state = "artificer_kobold"
 	inhand_icon_state = "kobold"
 	squeak_override = list('modular_zubbers/code/modules/emotes/sound/voice/yip.ogg' = 1)
@@ -160,7 +162,7 @@
 	righthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_right.dmi'
 
 /obj/item/toy/plush/skyrat/fox
-	inhand_icon_state = "plushie_fox"
+	inhand_icon_state = "fox"
 	lefthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_right.dmi'
 
@@ -266,11 +268,6 @@
 
 /obj/item/toy/plush/pkplush
 	inhand_icon_state = "plushie_secdrake"
-	lefthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_lefthand.dmi'
-	righthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_right.dmi'
-
-/obj/item/toy/plush/rouny
-	inhand_icon_state = "rouny"
 	lefthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/icons/mob/inhands/misc/plushes_right.dmi'
 
@@ -387,7 +384,7 @@
 /obj/item/toy/plush/imports/ada
 	name = "Ada plushie"
 	desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
-	inhand_icon_state = "ada"
+	inhand_icon_state = null
 	icon_state = "ada"
 	squeak_override = list('modular_skyrat/modules/emotes/sound/voice/nya.ogg' = 1)
 
@@ -502,7 +499,7 @@
 /obj/item/toy/plush/imports/atmosian
 	name = "Atmosian Plushie"
 	desc = "Очаровательная мягкая игрушка, напоминающая храброго атмосианина. К сожалению, он не устранит разгерметизацию за вас."
-	inhand_icon_state = "plush_atmosian"
+	inhand_icon_state = null
 	icon_state = "plush_atmosian"
 	attack_verb_simple = list("thumped", "whomped", "bumped")
 	resistance_flags = FIRE_PROOF
@@ -528,7 +525,7 @@
 /obj/item/toy/plush/imports/gaston
 	name = "Gaston"
 	desc = "Игрушка фиолетового цвета, её хозяин кажется так сильно любит фиолетовый, что красит буквально всё в этот цвет. Также эта игрушка кого-то явно напоминает из сотрудников на станции."
-	inhand_icon_state = "gaston_toaster"
+	inhand_icon_state = null
 	icon_state = "gaston_toaster"
 	attack_verb_simple = list("beeped", "booped", "pinged")
 	squeak_override = list('sound/machines/beep/beep.ogg' = 1)
@@ -576,7 +573,7 @@
 /obj/item/toy/plush/imports/omega
 	name = "Omega plushie"
 	desc = "This plushie really has an empty noggin and zero thoughts about commiting something especially cruel."
-	inhand_icon_state = "omega"
+	inhand_icon_state = null
 	icon_state = "omega"
 	attack_verb_simple = list("shot", "nuked", "detonated")
 	squeak_override = list('modular_zzplurt/sound/voice/plush/ooh.ogg' = 1)
@@ -591,28 +588,28 @@
 /obj/item/toy/plush/imports/asgore
 	name = "Bergentrückung plushie"
 	desc = "Король подземной сказки."
-	inhand_icon_state = "asgore"
+	inhand_icon_state = null
 	icon_state = "asgore"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/savepoint.ogg' = 1)
 
 /obj/item/toy/plush/imports/cirno
 	name = "Cirno plushie"
 	desc = "Чирно? Сырно? Даже она не знает как правильно произносить."
-	inhand_icon_state = "cirno"
+	inhand_icon_state = null
 	icon_state = "cirno"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/baka-cirno.ogg' = 1)
 
 /obj/item/toy/plush/imports/doctor_k
 	name = "Doctor K plushie"
 	desc = "Это не входило в его планы."
-	inhand_icon_state = "doctor_k"
+	inhand_icon_state = null
 	icon_state = "doctor_k"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/miss.ogg' = 1)
 
 /obj/item/toy/plush/imports/puro
 	name = "Puro plushie"
 	desc = "Он любит читать книжки."
-	inhand_icon_state = "puro"
+	inhand_icon_state = null
 	icon_state = "puro"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/jump.ogg' = 1)
 
@@ -676,7 +673,7 @@
 /obj/item/toy/plush/imports/tiamat/sierra_iris_plushie
 	name = "I.R.I.S. plushie"
 	desc = "От неё исходит характерный металлический запах.."
-	inhand_icon_state = "iris"
+	inhand_icon_state = null
 	icon_state = "iris"
 
 /obj/item/toy/plush/imports/millie
