@@ -679,7 +679,7 @@
 /obj/item/toy/plush/imports/millie
 	name = "Millie plush"
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
-	inhand_icon_state = "millie"
+	inhand_icon_state = null
 	icon_state = "millie"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/millie.ogg' = 1)
 
