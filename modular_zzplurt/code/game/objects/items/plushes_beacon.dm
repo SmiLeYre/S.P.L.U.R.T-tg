@@ -33,12 +33,12 @@
 /obj/item/choice_beacon/box/plushie/deluxe
 	name = "Deluxe choice box (plushie)"
 	desc =  "Using the power of quantum entanglement, this box contains five times every plush, until the moment it is opened!"
-	var/useses = 5
+	uses = 5
 
 /obj/item/choice_beacon/box/plushie/deluxe/spawn_option(choice, mob/living/M)
 	//I don't wanna recode two different procs just for it to do the same as doing this
-	if(useses > 1)
+	if(uses > 1)
 		var/obj/item/choice_beacon/box/plushie/deluxe/replace = new
-		replace.useses = useses - 1
+		replace.uses = uses - 1
 		M.put_in_hands(replace)
 	. = ..()
