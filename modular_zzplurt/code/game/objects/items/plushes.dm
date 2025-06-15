@@ -300,7 +300,7 @@
 
 /obj/item/toy/plush/imports/ninja
 	name = GREEN_NINJA_SKIN
-	desc = "Главный герой одного из самых популярных мультсериалов по ту сторону галактики. \"運命の忍者矢\""
+	desc = "The main character of one of the most popular animated series on the other side of the galaxy. \"運命の忍者矢\""
 	inhand_icon_state = "ninja_plushie_green"
 	icon_state = "ninja_plushie_green"
 	attack_verb_simple = list("shot", "nuked", "detonated")
@@ -320,17 +320,31 @@
 		COOLDOWN_START(src, change_ninja_cooldown, 6 SECONDS)
 		switch(current_skin)
 			if(BLUE_NINJA_SKIN)
-				say("Какой-то свет не остановит меня!")
+				if(CONFIG_GET(flag/russian_text_formation))
+					say("Какой-то свет не остановит меня!")
+				else
+					say("Some light won't stop me!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/Blue Ninja Plushie.ogg', 50, 1)
 			if(RED_NINJA_SKIN)
-				say("Ты можешь бежать... но ты не сможешь спрятаться!")
+				if(CONFIG_GET(flag/russian_text_formation))
+					say("Ты можешь бежать... но ты не сможешь спрятаться!")
+				else
+					say("You can run... but you can't hide!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/Red Ninja Plushie.ogg', 50, 1)
 			else
-				say("Я не боюсь тьмы! Я и есть тьма!")
+				if(CONFIG_GET(flag/russian_text_formation))
+					say("Я не боюсь тьмы! Я и есть тьма!")
+				else
+					say("I am not afraid of the darkness! I am the darkness!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/Green Ninja Plushie.ogg', 50, 1)
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inhand_icon()
+
+/obj/item/toy/plush/imports/ninja/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Главный герой одного из самых популярных мультсериалов по ту сторону галактики. \"運命の忍者矢\""
 
 #undef GREEN_NINJA_SKIN
 #undef BLUE_NINJA_SKIN
@@ -341,7 +355,7 @@
 
 /obj/item/toy/plush/imports/miner
 	name = BASIC_MINER_SKIN
-	desc = "Тот самый Шахтёр, способный провести геноцид планетарного объекта."
+	desc = "The very same Miner capable of genocide of a planet."
 	inhand_icon_state = "miner_plushie"
 	icon_state = "miner_plushie"
 	attack_verb_simple = list("killed", "slashed", "annihilates")
@@ -360,14 +374,25 @@
 		COOLDOWN_START(src, change_miner_cooldown, 6 SECONDS)
 		switch(current_skin)
 			if(BASIC_MINER_SKIN)
-				say("Ну вот. Сегодня я умру.")
+				if(CONFIG_GET(flag/russian_text_formation))
+					say("Ну вот. Сегодня я умру.")
+				else
+					say("Here we go. I'm gonna die today.")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/Miner Plushie.ogg', 50, 1)
 			else
-				say("Кишки, огромные кишки! Убей их… должен убить их всех! Разорвать… и… рвать! Демоны… они повсюду. Должен… убить их всех!")
+				if(CONFIG_GET(flag/russian_text_formation))
+					say("Кишки, огромные кишки! Убей их… должен убить их всех! Разорвать… и… рвать! Демоны… они повсюду. Должен… убить их всех!")
+				else
+					say("Guts, huge guts! Kill them... must kill them all! Tear... and... tear! Demons... they're everywhere. Must... must... kill them all!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/Bloody Miner Plushie.ogg', 50, 1)
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inhand_icon()
+
+/obj/item/toy/plush/imports/miner/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Тот самый Шахтёр, способный провести геноцид планетарного объекта."
 
 #undef BASIC_MINER_SKIN
 #undef RED_MINER_SKIN
@@ -383,25 +408,40 @@
 
 /obj/item/toy/plush/imports/ada
 	name = "Ada plushie"
-	desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
+	desc = "Plush toy of a gray cat with bright, emerald-like eyes. The tongue is attached carelessly. Wings are not included."
 	inhand_icon_state = null
 	icon_state = "ada"
 	squeak_override = list('modular_skyrat/modules/emotes/sound/voice/nya.ogg' = 1)
 
+/obj/item/toy/plush/imports/ada/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
+
 /obj/item/toy/plush/imports/jay
 	name = "Jay Plushie"
-	desc = "Плюшевая игрушка фиолетовой ящерки."
+	desc = "Purple lizard plush toy."
 	inhand_icon_state = "jay"
 	icon_state = "jay"
 	squeak_override = list('modular_skyrat/modules/emotes/sound/voice/nya.ogg' = 1)
 
+/obj/item/toy/plush/imports/jay/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Плюшевая игрушка фиолетовой ящерки."
+
 /obj/item/toy/plush/imports/kiirava
 	name = "Kiirava Plushie"
-	desc = "Выглядит как ящерка с телом оливково-зеленого цвета. У нее непропорционально большая голова с двумя огромными глазами: один черный, а другой розовый. У ящерки маленькие треугольные рожки по бокам головы и крошечный рот, который почти незаметен."
+	desc = "It looks like a lizard with an olive green colored body. It has a disproportionately large head with two huge eyes, one black and one pink. The lizard has small triangular horns on the sides of its head and a tiny mouth that is almost invisible."
 	inhand_icon_state = "kiirava"
 	icon_state = "kiirava"
 	attack_verb_simple = list("gnawed", "gnashed", "chewed")
 	squeak_override = list('modular_zzplurt/sound/voice/plush/rawr.ogg' = 1)
+
+/obj/item/toy/plush/imports/kiirava/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Выглядит как ящерка с телом оливково-зеленого цвета. У нее непропорционально большая голова с двумя огромными глазами: один черный, а другой розовый. У ящерки маленькие треугольные рожки по бокам головы и крошечный рот, который почти незаметен."
 
 /obj/item/toy/plush/imports/emma
 	name = "Emma plushie"
@@ -452,10 +492,15 @@
 
 /obj/item/toy/plush/imports/emma/zlatchek
 	name = "Zlat plushie"
-	desc = "Прапорщик - Ебучий койот. Примечание: Не доверяйте ему огнестрельное оружие."
+	desc = "Warrant Officer - Fucking Coyote. Note: Do not trust him firearms."
 	inhand_icon_state = "zlat"
 	icon_state = "zlat"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/zlatchek.ogg' = 1)
+
+/obj/item/toy/plush/imports/emma/zlatchek/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Прапорщик - Ебучий Койот. Примечание: Не доверяйте ему огнестрельное оружие."
 
 /obj/item/toy/plush/imports/tiamat
 	name = "Tiamat plushie"
@@ -484,29 +529,44 @@
 
 /obj/item/toy/plush/imports/stasik
 	name = "Stasik"
-	desc = "Игрушка XXXL размера, на бирке красуется надпись Стасик."
+	desc = "The toy with XXXL size, and the tag says Stasik."
 	inhand_icon_state = "stasik"
 	icon_state = "stasik"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/stasik_volcahara.ogg' = 1)
 
+/obj/item/toy/plush/imports/stasik/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Игрушка XXXL размера, на бирке красуется надпись Стасик."
+
 /obj/item/toy/plush/imports/rainbow_cat
 	name = "Rainbow cat"
-	desc = "Нанотехнологическая игрушка, созданная в стенах научных комплексов НТ. Видимо яркие переливающиеся цвета их рук дело."
+	desc = "Nanotechnological toy created within the walls of NT scientific complexes. Apparently, the bright shimmering colors are their handiwork."
 	icon_state = "rainbow"
 	inhand_icon_state = "rainbow"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/allta_mew1.ogg' = 1)
 
+/obj/item/toy/plush/imports/rainbow_cat/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Нанотехнологическая игрушка, созданная в стенах научных комплексов НТ. Видимо яркие переливающиеся цвета их рук дело."
+
 /obj/item/toy/plush/imports/atmosian
 	name = "Atmosian Plushie"
-	desc = "Очаровательная мягкая игрушка, напоминающая храброго атмосианина. К сожалению, он не устранит разгерметизацию за вас."
+	desc = "An adorable soft toy that resembles a brave Atmosian. Unfortunately, he won't fix the depressurization for you."
 	inhand_icon_state = null
 	icon_state = "plush_atmosian"
 	attack_verb_simple = list("thumped", "whomped", "bumped")
 	resistance_flags = FIRE_PROOF
 
+/obj/item/toy/plush/imports/atmosian/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Очаровательная мягкая игрушка, напоминающая храброго атмосианина. К сожалению, он не устранит разгерметизацию за вас."
+
 /obj/item/toy/plush/imports/laska
 	name = "Lotti Plushie"
-	desc = "Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
+	desc = "Soft toy in the shape of a cat will easily quench your thirst for hugs and caresses, from it you can smell the light aroma of ash and sweetly berry taste."
 	inhand_icon_state = "laska"
 	icon_state = "laska"
 	squeak_override = list(
@@ -514,6 +574,11 @@
 		'modular_zzplurt/sound/voice/plush/tiamat_mrrp2.ogg' = 1,
 		'modular_zzplurt/sound/voice/plush/tiamat_meow1.ogg' = 1
 	)
+
+/obj/item/toy/plush/imports/laska/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
 
 /obj/item/toy/plush/imports/plushy_savannah
 	name = "Plushy Savannah"
@@ -524,18 +589,28 @@
 
 /obj/item/toy/plush/imports/gaston
 	name = "Gaston"
-	desc = "Игрушка фиолетового цвета, её хозяин кажется так сильно любит фиолетовый, что красит буквально всё в этот цвет. Также эта игрушка кого-то явно напоминает из сотрудников на станции."
+	desc = "The toy is purple in color, its owner seems to love purple so much that he paints literally everything in this color. Also, this toy reminds me of someone from the staff at the station."
 	inhand_icon_state = null
 	icon_state = "gaston_toaster"
 	attack_verb_simple = list("beeped", "booped", "pinged")
 	squeak_override = list('sound/machines/beep/beep.ogg' = 1)
 
+/obj/item/toy/plush/imports/gaston/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Игрушка фиолетового цвета, её хозяин кажется так сильно любит фиолетовый, что красит буквально всё в этот цвет. Также эта игрушка кого-то явно напоминает из сотрудников на станции."
+
 /obj/item/toy/plush/imports/grayson
 	name = "Grayson plush"
-	desc = "дорогая плюшевая игрушка! Сделана явно на заказ (и явно любителем прятатся в шкафах)"
+	desc = "Expensive plush toy! Clearly made to order (and clearly a fan of hiding in closets)!"
 	inhand_icon_state = "grayson"
 	icon_state = "grayson"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/graysonplush.ogg' = 1)
+
+/obj/item/toy/plush/imports/grayson/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Дорогая плюшевая игрушка! Сделана явно на заказ (и явно любителем прятатся в шкафах)!"
 
 /obj/item/toy/plush/imports/who
 	name = "security officer plushie"
@@ -587,45 +662,70 @@
 
 /obj/item/toy/plush/imports/asgore
 	name = "Bergentrückung plushie"
-	desc = "Король подземной сказки."
+	desc = "King of the Underground Tale."
 	inhand_icon_state = null
 	icon_state = "asgore"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/savepoint.ogg' = 1)
 
+/obj/item/toy/plush/imports/asgore/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Король подземной сказки!"
+
 /obj/item/toy/plush/imports/cirno
 	name = "Cirno plushie"
-	desc = "Чирно? Сырно? Даже она не знает как правильно произносить."
+	desc = "Chirno? Cheerno? Even she doesn't know how to pronounce it."
 	inhand_icon_state = null
 	icon_state = "cirno"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/baka-cirno.ogg' = 1)
 
+/obj/item/toy/plush/imports/cirno/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Чирно? Сырно? Даже она не знает как правильно произносить."
+
 /obj/item/toy/plush/imports/doctor_k
 	name = "Doctor K plushie"
-	desc = "Это не входило в его планы."
+	desc = "It wasn't part of his plan."
 	inhand_icon_state = null
 	icon_state = "doctor_k"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/miss.ogg' = 1)
 
+/obj/item/toy/plush/imports/doctor_k/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Это не входило в его планы."
+
 /obj/item/toy/plush/imports/puro
 	name = "Puro plushie"
-	desc = "Он любит читать книжки."
+	desc = "He likes to read books."
 	inhand_icon_state = null
 	icon_state = "puro"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/jump.ogg' = 1)
 
+/obj/item/toy/plush/imports/puro/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Он любит читать книжки."
+
 /obj/item/toy/plush/imports/hank
 	name = "Hank plushie"
-	desc = "Молчалив."
+	desc = "Silent."
 	inhand_icon_state = "hank"
 	icon_state = "hank"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/grunt-kill.ogg' = 1)
+
+/obj/item/toy/plush/imports/hank/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Молчалив."
 
 #define BASIC_NEKO_SKIN "Silly Neko Plushie"
 #define ANGRY_NEKO_SKIN "Angry Neko Plushie"
 
 /obj/item/toy/plush/imports/silly_neko_plushie
 	name = BASIC_NEKO_SKIN
-	desc = "Cмешная плюшевая игрушка в виде забавной кошки, на бирке написано 'Осторожно, дешёвый, радиоактивный материал может вызвать уменьшение члена'."
+	desc = "Funny plush toy in the shape of a funny cat, the tag says 'Caution, cheap, radioactive material may cause penis shrinkage'."
 	inhand_icon_state = "silly_neko_plushie"
 	icon_state = "silly_neko_plushie"
 	attack_verb_simple = list("meows", "nya", "purrs")
@@ -651,14 +751,19 @@
 		COOLDOWN_START(src, change_neko_cooldown, 6 SECONDS)
 		switch(current_skin)
 			if(BASIC_NEKO_SKIN)
-				say("Burunya")
+				say("Burunya!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/nekoark/burunya.ogg', 50, 1)
 			else
-				say("Dori dori dori dori")
+				say("Dori-dori-dori-dori!")
 				playsound(src, 'modular_zzplurt/sound/voice/plush/nekoark/neco-arc-dori.ogg', 50, 1)
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inhand_icon()
+
+/obj/item/toy/plush/imports/silly_neko_plushie/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Cмешная плюшевая игрушка в виде забавной кошки, на бирке написано 'Осторожно, дешёвый, радиоактивный материал может вызвать уменьшение члена'."
 
 #undef BASIC_NEKO_SKIN
 #undef ANGRY_NEKO_SKIN
@@ -672,9 +777,14 @@
 
 /obj/item/toy/plush/imports/tiamat/sierra_iris_plushie
 	name = "I.R.I.S. plushie"
-	desc = "От неё исходит характерный металлический запах.."
+	desc = "It gives off a distinctive metallic odor."
 	inhand_icon_state = null
 	icon_state = "iris"
+
+/obj/item/toy/plush/imports/tiamat/sierra_iris_plushie/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "От неё исходит характерный металлический запах."
 
 /obj/item/toy/plush/imports/millie
 	name = "Millie plush"
@@ -685,7 +795,7 @@
 
 /obj/item/toy/plush/imports/lissara
 	name = "Lissara plush"
-	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
+	desc = "Charming soft toy in the form of a miniature lamia. Its smooth body stretches pleasantly under your fingers, and its tail is flexible, as if calling to wrap around your wrist. When you press lightly on its tummy, the toy hisses softly and its thin tongue sticks out slightly."
 	inhand_icon_state = "lissara"
 	icon_state = "lissara"
 	attack_verb_simple = list("bitten", "hissed", "tail slapped")
@@ -693,9 +803,14 @@
 	'modular_zzplurt/sound/voice/raptor_purr.ogg' = 1
 	)
 
+/obj/item/toy/plush/imports/tiamat/sierra_iris_plushie/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
+
 /obj/item/toy/plush/imports/araminta
 	name = "Araminta plush"
-	desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время."
+	desc = "A plush toy armed with white paws is ready to commit the greatest heist of all - steal your free time."
 	inhand_icon_state = "araminta"
 	icon_state = "araminta"
 	attack_verb_simple = list("meow", "nya", "purrs")
@@ -703,9 +818,19 @@
 	'modular_zzplurt/sound/voice/plush/short_purr_silent.ogg' = 1
 	)
 
+/obj/item/toy/plush/imports/tiamat/sierra_iris_plushie/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время!"
+
 /obj/item/toy/plush/imports/stasik/artemq
 	name = "Artems toy plush"
-	desc = "Вы видите игрушку,одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо,она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
+	desc = "You see a toy dressed in a standard inteQ uniform. Looking into its surprised plush face, it reminds you suspiciously of someone. You can definitely tell that the toy is scared of someone. But who would a plush inteQ person be scared of?"
 	inhand_icon_state = "artems"
 	icon_state = "artems"
 	squeak_override = list('modular_zzplurt/sound/voice/plush/graysonplush.ogg' = 2, 'modular_zzplurt/sound/voice/plush/stasik_volcahara.ogg' = 1,)
+
+/obj/item/toy/plush/imports/tiamat/sierra_iris_plushie/New(loc, ...)
+	. = ..()
+	if(CONFIG_GET(flag/russian_text_formation))
+		desc = "Вы видите игрушку, одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо, она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
